@@ -1,9 +1,100 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.QWASH" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.QWASH" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!-- Primary color -->
+        <item name="colorPrimary">#E2136E</item>
+        <!-- Dark Primary color (used in status bar) -->
+        <item name="colorPrimaryDark">#E2136E</item>
+        <!-- Accent color -->
+        <item name="colorAccent">#E2136E</item>
+        <!-- Color for activated controls -->
+        <item name="colorControlActivated">#ffffff</item>
+        <!-- Text color for toolbar and title -->
+        <item name="android:textColorPrimary">#ffffff</item>
+        <!-- Background color -->
+        <item name="android:windowBackground">#ffffff</item>
+        <!-- Floating action button color -->
+        <item name="colorSurface">#ffffff</item>
+        <!-- Set RadioButton color -->
+        <item name="android:buttonTint">#E2136E</item>
+
+
+        <!-- Set default text color for AutoCompleteTextView -->
+        <item name="android:textColor">#000000</item> <!-- Black text color -->
+
+        <!-- Set hint text color -->
+        <item name="android:textColorHint">#8a8a8a</item> <!-- Gray hint color -->
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">#C0364C</item>
     </style>
 
-    <style name="Theme.QWASH" parent="Base.Theme.QWASH" />
+    <style name="FlatCornersNavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="shapeAppearance">@style/FlatShapeAppearance</item>
+    </style>
+
+    <style name="FlatShapeAppearance" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+
+    <style name="BottomNavTextActive">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Inactive Text Size -->
+    <style name="BottomNavTextInactive">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item> <!-- টেক্সট সাইজ ছোট করা হলো -->
+    </style>
+
+
+    <style name="Base.Theme.QWASH." parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!-- Primary color -->
+        <item name="colorPrimary">#E2136E</item>
+        <!-- Dark Primary color (used in status bar) -->
+        <item name="colorPrimaryDark">#E2136E</item>
+        <!-- Accent color -->
+        <item name="colorAccent">#E2136E</item>
+        <!-- Color for activated controls -->
+        <item name="colorControlActivated">#ffffff</item>
+        <!-- Text color for toolbar and title -->
+        <item name="android:textColorPrimary">#ffffff</item>
+        <!-- Background color -->
+        <item name="android:windowBackground">#ffffff</item>
+        <!-- Floating action button color -->
+        <item name="colorSurface">#ffffff</item>
+        <!-- Set RadioButton color -->
+        <item name="android:buttonTint">#E2136E</item>
+
+
+        <!-- Set default text color for AutoCompleteTextView -->
+        <item name="android:textColor">#000000</item> <!-- Black text color -->
+
+        <!-- Set hint text color -->
+        <item name="android:textColorHint">#8a8a8a</item> <!-- Gray hint color -->
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">#B9B9B9</item>
+    </style>
+
+
+
+
+
+
+
+
 </resources>

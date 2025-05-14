@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="normal_color">@android:color/darker_gray</color>
+
+    <color name="gradient_start">#6E00FF</color>
+    <color name="gradient_end">#00E0FF</color>
+
 </resources>
