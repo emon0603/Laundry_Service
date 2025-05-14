@@ -3,7 +3,11 @@ package com.emon.qwash;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,6 +17,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.emon.qwash.FragmentClass.Frag_Explore;
@@ -35,11 +40,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        WindowCompat.getInsetsController(getWindow(),getWindow().getDecorView()).setAppearanceLightStatusBars(false);
 
 
 
@@ -69,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         tabExplore.setOnClickListener(v -> setSelectedTab("explore"));
         tabOffers.setOnClickListener(v -> setSelectedTab("offers"));
         tabProfile.setOnClickListener(v -> setSelectedTab("profile"));
+
+
+        StatusBar();
+
+
     }
 
     private void setSelectedTab(String tab) {
@@ -131,4 +137,26 @@ public class MainActivity extends AppCompatActivity {
         textView.setTextColor(Color.parseColor("#9E9E9E"));
         textView.invalidate(); // force redraw
     }
+
+    public void StatusBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+            // Set the status bar transparent to show layout background
+            window.setStatusBarColor(Color.TRANSPARENT);
+
+            // Ensure white icons by NOT using LIGHT_STATUS_BAR
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                window.getDecorView().setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                );
+            }
+        }
+    }
+
+
+
+
 }
