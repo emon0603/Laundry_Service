@@ -1,0 +1,104 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:padding="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        >
+
+        <TextView
+            android:id="@+id/timetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag_background"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="4dp"
+            android:text="ETA 48hrs"
+            android:textColor="#00C18C"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/imgService"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/service_item_1"
+            android:layout_below="@+id/timetv"
+            android:layout_centerInParent="true"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgService"
+            >
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center|left"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            >
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$12 Per Kg"
+                android:textColor="#6F35EF"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regular Wash"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                />
+
+
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|right"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/bg_circle"
+                android:padding="5dp"
+                android:src="@drawable/ic_arrow_outward"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+
+                />
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

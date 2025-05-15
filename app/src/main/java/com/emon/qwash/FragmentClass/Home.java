@@ -72,7 +72,7 @@ public class Home extends Fragment {
         itemList.add(new Special_Offers(R.drawable.banner_special_offer));
         itemList.add(new Special_Offers(R.drawable.banner_special_offer));
 
-        adapter = new Special_offer_Adapter(itemList);
+        adapter = new Special_offer_Adapter(itemList,0);
         recyclerView.setAdapter(adapter);
 
 
