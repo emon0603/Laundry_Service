@@ -29,10 +29,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout tabHome, tabOrders, tabOffers, tabProfile;
+    LinearLayout tabHome, tabOrders, tabExplore,tabOffers, tabProfile;
     ImageView iconHome, iconOrders, iconOffers, iconProfile;
     TextView textHome, textOrders, textOffers, textProfile;
-    FloatingActionButton tabExplore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

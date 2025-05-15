@@ -2,17 +2,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F4F4F7"
+    android:background="#F0F0F7"
     android:id="@+id/main"
     >
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bg_main_header"
-        android:scaleType="centerCrop"
-        />
 
 
     <LinearLayout
