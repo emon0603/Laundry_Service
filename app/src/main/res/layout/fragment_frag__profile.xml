@@ -49,26 +49,7 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal"
 
-            >
-
-
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_circle"
-                android:padding="10dp"
-                android:src="@drawable/ic_notifications" />
-
-
-        </LinearLayout>
 
 
     </RelativeLayout>
@@ -76,14 +57,6 @@
 
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/top"
-        android:background="@drawable/bg_body"
-        android:fillViewport="true"
-        android:layout_marginTop="40dp"
-        >
 
 
 
@@ -95,77 +68,95 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_body"
             android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/top"
             >
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                >
 
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:id="@+id/namelay"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+
                     >
 
-                    <LinearLayout
-                        android:id="@+id/namelay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center"
-
-                        >
-
-                        <TextView
-                            android:id="@+id/nametv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|left"
-                            android:gravity="center"
-                            android:text="Emon"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:layout_centerInParent="true"
-                            />
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_edits"
-                            android:layout_marginLeft="10dp"
-
-                            />
-
-
-                    </LinearLayout>
-
-
-
-
                     <TextView
+                        android:id="@+id/nametv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|left"
-                        android:gravity="center|left"
-                        android:text="Our Laundry Service."
+                        android:gravity="center"
+                        android:text="Emon"
                         android:textSize="18sp"
-                        android:layout_below="@+id/namelay"
+                        android:textStyle="bold"
                         android:layout_centerInParent="true"
                         />
 
 
-                </RelativeLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_edits"
+                        android:layout_marginLeft="10dp"
+
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:gravity="center|left"
+                    android:text="user@gmail.com"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/namelay"
+                    android:layout_centerInParent="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_body"
+                android:fillViewport="true"
+                android:layout_marginTop="40dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+
+
 
 
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 app:cardCornerRadius="20dp"
-                android:layout_marginTop="30dp"
                 >
 
                 <LinearLayout
@@ -200,11 +191,10 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-
-
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        />
 
 
                 </LinearLayout>
@@ -216,7 +206,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 app:cardCornerRadius="20dp"
@@ -254,8 +244,10 @@
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/save_card_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp" />
 
 
 
@@ -267,33 +259,46 @@
             </androidx.cardview.widget.CardView>
 
 
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/myButton"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btnTest"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Click Me"
-                android:textColor="#FFFFFF"
+                android:text="Test"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
                 android:background="@drawable/bg_button"
-                android:padding="12dp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="50dp"
+
+
+                />
 
 
 
 
 
+
+
+
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
 
         </LinearLayout>
 
 
-    </androidx.core.widget.NestedScrollView>
+
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/top"
         >
 

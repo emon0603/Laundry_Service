@@ -113,7 +113,7 @@
             android:id="@+id/iconOffers"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_profile_unselected" />
+            android:src="@drawable/ic_offers_unselected" />
 
         <TextView
             android:id="@+id/textOffers"

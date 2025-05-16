@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         iconHome.setImageResource(R.drawable.ic_home_unselected);
         iconOrders.setImageResource(R.drawable.ic_order_unselected);
-        iconOffers.setImageResource(R.drawable.ic_home_unselected);
+        iconOffers.setImageResource(R.drawable.ic_offers_unselected);
         iconProfile.setImageResource(R.drawable.ic_profile_unselected);
 
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         } else if (tab.equals("offers")) {
-            iconOffers.setImageResource(R.drawable.ic_order_selected);
+            iconOffers.setImageResource(R.drawable.ic_offers_selected);
             setGradientText(textOffers);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Frag_Offers()).commit();
 
