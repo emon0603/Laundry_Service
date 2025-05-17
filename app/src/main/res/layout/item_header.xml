@@ -1,0 +1,11 @@
+<!-- res/layout/item_header.xml -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textDateHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Today"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:paddingVertical="8dp"
+    android:paddingStart="8dp"
+    android:textColor="#000000" />
