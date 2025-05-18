@@ -175,6 +175,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 app:cardCornerRadius="20dp"
+                android:layout_marginTop="20dp"
                 >
 
                 <LinearLayout
@@ -334,15 +335,35 @@
             android:layout_centerInParent="true"
             />
 
+        <RelativeLayout
+            android:id="@+id/profile_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            >
+
         <!-- Profile Image (Centered Inside Progress Bar) -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_centerInParent="true"
             android:src="@drawable/ic_person"
             android:background="@drawable/bg_image_circle"
             />
+
+            <ImageView
+                android:id="@+id/edit_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignBottom="@id/profile_image"
+                android:layout_alignEnd="@id/profile_image"
+                android:src="@drawable/ic_edit"
+                android:padding="4dp"
+                android:background="@drawable/bg_logo"
+                />
+        </RelativeLayout>
 
 
         <!-- Completion Text Below Image -->
@@ -355,7 +376,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="10sp"
-            android:layout_below="@+id/profile_image"
+            android:layout_below="@+id/profile_container"
             android:background="@drawable/bg_button"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"

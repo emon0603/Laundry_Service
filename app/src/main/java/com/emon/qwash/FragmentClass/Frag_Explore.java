@@ -41,10 +41,14 @@ public class Frag_Explore extends Fragment {
 
 
         services = new ArrayList<>();
-        services.add(new ServiceItem(R.drawable.service_item_1, "$12 Per Kg", "Regular Wash"));
-        services.add(new ServiceItem(R.drawable.service_item_1, "$5 Per Item", "Dry Cleaning"));
-        services.add(new ServiceItem(R.drawable.service_item_1, "$3 Per Item", "Wash & Ironing"));
-        services.add(new ServiceItem(R.drawable.service_item_1, "Pick Manually", "Service Bundle"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "$12 Per Kg", "Regular Wash"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "$5 Per Item", "Dry Cleaning"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "$3 Per Item", "Wash & Ironing"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "Pick Manually", "Service Bundle"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "Pick Manually", "Service Bundle"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "Pick Manually", "Service Bundle"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "Pick Manually", "Service Bundle"));
+        services.add(new ServiceItem(R.drawable.ic_product1, "Pick Manually", "Service Bundle"));
 
         adapter = new Services_Explore_Adapter(getContext(), services);
         ExploreecyclerView.setAdapter(adapter);

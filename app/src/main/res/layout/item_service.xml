@@ -80,17 +80,18 @@
         </LinearLayout>
 
             <ImageView
+                android:id="@+id/favorite_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center|right"
                 android:layout_marginLeft="30dp"
-                android:background="@drawable/bg_circle"
                 android:padding="5dp"
-                android:src="@drawable/ic_arrow_outward"
+                android:src="@drawable/ic_heart_stroke"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="10dp"
                 android:layout_centerVertical="true"
+                app:tint="@android:color/darker_gray"
 
                 />
 

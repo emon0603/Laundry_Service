@@ -18,17 +18,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.emon.qwash.Adapter.Cagories_Adapter;
+import com.emon.qwash.Adapter.Services_Explore_Adapter;
 import com.emon.qwash.Adapter.Special_offer_Adapter;
+import com.emon.qwash.MainActivity;
+import com.emon.qwash.ModelClass.ServiceItem;
 import com.emon.qwash.ModelClass.Special_Offers;
+import com.emon.qwash.NotificationClass.NotificationHistory;
 import com.emon.qwash.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
@@ -39,13 +46,16 @@ import java.util.List;
 
 public class Home extends Fragment {
 
+    ImageView notificationBtn;
     TextView heretexttv;
     View dot,progressLine;
     LinearLayout labelContainer;
 
-    RecyclerView recyclerView;
+    RecyclerView recyclerView, ExploreecyclerView;
     Special_offer_Adapter adapter;
     List<Special_Offers> itemList;
+    TextView SeeAllOrder,SeeAllOffer;
+    List<ServiceItem> services = new ArrayList<>();
 
 
 
@@ -59,9 +69,33 @@ public class Home extends Fragment {
         View viewhome = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = viewhome.findViewById(R.id.recyclerView);
+        notificationBtn = viewhome.findViewById(R.id.notificationBtn);
         heretexttv = viewhome.findViewById(R.id.heretexttv);
+        SeeAllOrder = viewhome.findViewById(R.id.SeeAllOrder);
+        SeeAllOffer = viewhome.findViewById(R.id.SeeAllOffer);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+
+
+        ExploreecyclerView = viewhome.findViewById(R.id.ExploreecyclerView);
+
+        ExploreecyclerView.setLayoutManager(
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
+        );ExploreecyclerView.setAdapter(new Services_Explore_Adapter(getContext(), services));
+
+
+        services = new ArrayList<>();
+        services.add(new ServiceItem(R.drawable.service_item_1, "$12 Per Kg", "Regular Wash"));
+        services.add(new ServiceItem(R.drawable.service_item_1, "$5 Per Item", "Dry Cleaning"));
+        services.add(new ServiceItem(R.drawable.service_item_1, "$3 Per Item", "Wash & Ironing"));
+        services.add(new ServiceItem(R.drawable.service_item_1, "Pick Manually", "Service Bundle"));
+
+        Cagories_Adapter adapter2 = new Cagories_Adapter(getContext(), services);
+
+        ExploreecyclerView.setAdapter(adapter2);
+
+
 
 
         // Sample Data
@@ -72,7 +106,7 @@ public class Home extends Fragment {
         itemList.add(new Special_Offers(R.drawable.banner_special_offer));
         itemList.add(new Special_Offers(R.drawable.banner_special_offer));
 
-        adapter = new Special_offer_Adapter(itemList,0);
+        adapter = new Special_offer_Adapter(getContext(),itemList,0);
         recyclerView.setAdapter(adapter);
 
 
@@ -81,9 +115,20 @@ public class Home extends Fragment {
         progressLine = viewhome.findViewById(R.id.progress_line);
 
         // Call this with 0, 1, 2 or 3
-        updateProgressDot(4); // Change this index to test
+        updateProgressDot(0); // Change this index to test
 
         setGradientText(heretexttv);
+
+        notificationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), NotificationHistory.class));
+            }
+        });
+
+        SeeAllButtonOnClick(SeeAllOrder,"orders", new Frag_Orders());
+        SeeAllButtonOnClick(SeeAllOffer,"offers", new Frag_Offers());
+
 
 
         return viewhome;
@@ -135,7 +180,18 @@ public class Home extends Fragment {
         textView.invalidate();
     }
 
-
+    private void SeeAllButtonOnClick(TextView textView, String tabname, Fragment fragment){
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) requireActivity(); // ✅ get actual activity instance
+                mainActivity.setSelectedTab(tabname);
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment)
+                        .commit();
+            }
+        });
+    }
 
 
 

@@ -13,9 +13,17 @@
         android:theme="@style/Theme.QWASH"
         tools:targetApi="31">
         <activity
+            android:name=".Service_Order.Order_payment"
+            android:exported="false" />
+        <activity
+            android:name=".Service_Order.Order_details"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationClass.NotificationHistory"
+            android:exported="false" />
+        <activity
             android:name=".LoginRegister.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginRegister.SignUpActivity"
             android:exported="false" />

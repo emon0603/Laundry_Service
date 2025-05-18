@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.WindowCompat;
 
+import com.emon.qwash.MainActivity;
 import com.emon.qwash.R;
 import com.emon.qwash.util.SetGradientText;
 import com.emon.qwash.util.WhiteStatusBar;
@@ -113,6 +114,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (isValid) {
                     // Call login request
                     //loginUser();
+                    editor.putString("email", edemail.getText().toString());
+                    editor.apply();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+
 
                 }
 

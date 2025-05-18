@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setSelectedTab(String tab) {
+    public void setSelectedTab(String tab) {
         // Reset all icons and text colors to unselected state
         resetToGray(textHome);
         resetToGray(textOrders);

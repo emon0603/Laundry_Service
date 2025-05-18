@@ -54,14 +54,14 @@ public class Frag_Offers extends Fragment {
         WelcomerecyclerView.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
         );
-        Special_offer_Adapter horizontalAdapter = new Special_offer_Adapter(welcomeitemList, 1);
+        Special_offer_Adapter horizontalAdapter = new Special_offer_Adapter(getContext(),welcomeitemList, 1);
         WelcomerecyclerView.setAdapter(horizontalAdapter);
 
         // Vertical RecyclerView
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false)
         );
-        Special_offer_Adapter verticalAdapter = new Special_offer_Adapter(itemList, 1);
+        Special_offer_Adapter verticalAdapter = new Special_offer_Adapter(getContext(),itemList, 1);
         recyclerView.setAdapter(verticalAdapter);
 
         return viewOffer;

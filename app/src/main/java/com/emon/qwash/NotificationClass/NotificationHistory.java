@@ -1,42 +1,42 @@
-package com.emon.qwash.FragmentClass;
+package com.emon.qwash.NotificationClass;
 
 import android.os.Bundle;
+import android.view.View;
 
-import androidx.fragment.app.Fragment;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.emon.qwash.Adapter.SectionedOrderAdapter;
+import com.emon.qwash.Adapter.NotificationAdapter;
 import com.emon.qwash.ModelClass.OrderDisplayItem;
 import com.emon.qwash.ModelClass.OrderItem;
 import com.emon.qwash.R;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
+public class NotificationHistory extends AppCompatActivity {
 
-public class Frag_Orders extends Fragment {
 
     RecyclerView recyclerView;
     List<OrderItem> orderList;
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_notification_history);
+        WindowCompat.getInsetsController(getWindow(),getWindow().getDecorView()).setAppearanceLightStatusBars(false);
 
-        View Orderview = inflater.inflate(R.layout.fragment_frag__orders, container, false);
 
 
-        recyclerView = Orderview.findViewById(R.id.recyclerViewOrders);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView = findViewById(R.id.recyclerViewNotification);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<OrderItem> rawOrderList = new ArrayList<>();
         rawOrderList.add(new OrderItem("Wash", "IIITD, New Delhi", "16 May 2025, 1:48 PM", "Completed", "30"));
@@ -50,18 +50,14 @@ public class Frag_Orders extends Fragment {
         rawOrderList.add(new OrderItem("Wash", "IIITD, New Delhi", "14 May 2025, 7:48 PM", "Completed", "30"));
         rawOrderList.add(new OrderItem("Wash", "IIITD, New Delhi", "14 May 2025, 5:48 PM", "Completed", "30"));
 
-        List<OrderDisplayItem> displayList = SectionedOrderAdapter.getSectionedOrderList(rawOrderList);
-        SectionedOrderAdapter adapter = new SectionedOrderAdapter(displayList);
+        List<OrderDisplayItem> displayList = NotificationAdapter.getSectionedOrderList(rawOrderList);
+        NotificationAdapter adapter = new NotificationAdapter(displayList);
         recyclerView.setAdapter(adapter);
 
-
-
-
-
-
-        return Orderview;
     }
 
 
-
+    public void GotoBack(View view) {
+        onBackPressed();
+    }
 }

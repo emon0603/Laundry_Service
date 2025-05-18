@@ -21,12 +21,12 @@ import com.emon.qwash.Service_Order.Order_details;
 
 import java.util.List;
 
-public class Services_Explore_Adapter extends RecyclerView.Adapter<Services_Explore_Adapter.ServiceViewHolder> {
+public class Cagories_Adapter extends RecyclerView.Adapter<Cagories_Adapter.ServiceViewHolder> {
 
     private Context context;
     private List<ServiceItem> serviceList;
 
-    public Services_Explore_Adapter(Context context, List<ServiceItem> serviceList) {
+    public Cagories_Adapter(Context context, List<ServiceItem> serviceList) {
         this.context = context;
         this.serviceList = serviceList;
     }
@@ -34,7 +34,7 @@ public class Services_Explore_Adapter extends RecyclerView.Adapter<Services_Expl
     @NonNull
     @Override
     public ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_product_list, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_service, parent, false);
         return new ServiceViewHolder(view);
     }
 

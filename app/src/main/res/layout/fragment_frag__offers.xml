@@ -48,24 +48,7 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:orientation="horizontal"
 
-            >
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_circle"
-                android:padding="10dp"
-                android:src="@drawable/ic_notifications" />
-
-
-        </LinearLayout>
 
 
     </RelativeLayout>
@@ -142,14 +125,7 @@
                     />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:text="See all"
-                    android:textColor="#4892E5"
-                    android:textSize="16sp" />
+
 
             </RelativeLayout>
 
@@ -178,14 +154,7 @@
                     />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:text="See all"
-                    android:textColor="#4892E5"
-                    android:textSize="16sp" />
+
 
             </RelativeLayout>
 

@@ -4,6 +4,7 @@ public class ServiceItem {
     private int imageResId;
     private String price;
     private String name;
+    private boolean isFavorite;
 
     public ServiceItem(int imageResId, String price, String name) {
         this.imageResId = imageResId;
@@ -11,6 +12,10 @@ public class ServiceItem {
         this.name = name;
     }
 
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
     public int getImageResId() {
         return imageResId;
     }
@@ -21,6 +26,10 @@ public class ServiceItem {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
     }
 }
 
