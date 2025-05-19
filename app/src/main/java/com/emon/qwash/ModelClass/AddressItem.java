@@ -3,19 +3,20 @@ package com.emon.qwash.ModelClass;
 
 
 public class AddressItem {
-    private String title;
     private int leftIconRes;
     private int rightIcon1Res;
     private int rightIcon2Res;
 
-    public AddressItem(String title, int leftIconRes) {
-        this.title = title;
+    public int id;
+    public String address;
+    public String type;
+
+
+    public AddressItem( int leftIconRes) {
         this.leftIconRes = leftIconRes;
     }
 
-    public String getTitle() {
-        return title;
-    }
+
 
     public int getLeftIconRes() {
         return leftIconRes;

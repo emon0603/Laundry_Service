@@ -44,7 +44,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/numbertv"
+                android:id="@+id/addressTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
@@ -52,7 +52,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/addressTV"
+                android:id="@+id/addressTVs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"

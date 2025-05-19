@@ -22,11 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Address_Adapter extends RecyclerView.Adapter<Address_Adapter.ViewHolder> {
-    private List<String> items;
+    private List<AddressItem> addressList;
     private int iconResId;
 
-    public Address_Adapter(List<String> items, int iconResId) {
-        this.items = items;
+    public Address_Adapter( List<AddressItem> addressList,int iconResId) {
+        this.addressList = addressList;
         this.iconResId = iconResId;
     }
 
@@ -40,23 +40,27 @@ public class Address_Adapter extends RecyclerView.Adapter<Address_Adapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String title = items.get(position);
-        holder.tvTitle.setText(title);
-        holder.ivIcon.setImageResource(iconResId);
+
+        AddressItem item = addressList.get(position);
+        holder.tvTitle.setText( item.type.toUpperCase());
+        holder.addressTV.setText( item.address);
+
+
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return addressList.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle;
+        TextView tvTitle, addressTV;
         ImageView ivIcon;
 
         ViewHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.titleText);
+            addressTV = itemView.findViewById(R.id.addressTV);
             ivIcon = itemView.findViewById(R.id.leftIcon);
         }
     }
