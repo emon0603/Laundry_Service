@@ -69,7 +69,7 @@ public class Order_payment extends AppCompatActivity {
                 layout2.setBackgroundResource(R.drawable.bg_unselected);
                 layout3.setBackgroundResource(R.drawable.bg_unselected);
 
-                credit_card_tv.setTextColor(getResources().getColor(R.color.white));
+                credit_card_tv.setTextColor(getResources().getColor(R.color.payment_method_select));
                 debit_card_tv.setTextColor(getResources().getColor(R.color.black));
                 cashondelivery_tv.setTextColor(getResources().getColor(R.color.black));
             }
@@ -84,7 +84,7 @@ public class Order_payment extends AppCompatActivity {
                 layout1.setBackgroundResource(R.drawable.bg_unselected);
                 layout3.setBackgroundResource(R.drawable.bg_unselected);
 
-                debit_card_tv.setTextColor(getResources().getColor(R.color.white));
+                debit_card_tv.setTextColor(getResources().getColor(R.color.payment_method_select));
                 credit_card_tv.setTextColor(getResources().getColor(R.color.black));
                 cashondelivery_tv.setTextColor(getResources().getColor(R.color.black));
             }
@@ -99,7 +99,7 @@ public class Order_payment extends AppCompatActivity {
                 layout1.setBackgroundResource(R.drawable.bg_unselected);
                 layout2.setBackgroundResource(R.drawable.bg_unselected);
 
-                cashondelivery_tv.setTextColor(getResources().getColor(R.color.white));
+                cashondelivery_tv.setTextColor(getResources().getColor(R.color.payment_method_select));
                 credit_card_tv.setTextColor(getResources().getColor(R.color.black));
                 debit_card_tv.setTextColor(getResources().getColor(R.color.black));
             }

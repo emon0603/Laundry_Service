@@ -304,7 +304,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_debit_card"
+                        android:src="@drawable/ic_cash_on_delivery"
                         android:layout_gravity="center"
                         />
 
@@ -314,6 +314,7 @@
                         android:orientation="vertical"
                         android:layout_weight="1"
                         android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
                         >
 
                         <TextView

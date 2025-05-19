@@ -26,13 +26,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.WindowCompat;
 
+import com.emon.qwash.Api.ApiClient;
+import com.emon.qwash.Api.ApiService;
 import com.emon.qwash.MainActivity;
+import com.emon.qwash.ModelClass.LoginResponse;
 import com.emon.qwash.R;
 import com.emon.qwash.util.SetGradientText;
 import com.emon.qwash.util.WhiteStatusBar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 
@@ -113,11 +122,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (isValid) {
                     // Call login request
-                    //loginUser();
-                    editor.putString("email", edemail.getText().toString());
-                    editor.apply();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+                    loginUser();
+
 
 
                 }
@@ -176,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
 */
     }
 
-/*    private void loginUser() {
+    private void loginUser() {
         ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setMessage("Logging in... Please wait");
         progressDialog.setCancelable(false);
@@ -225,7 +231,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }/*
 
     private void RequestGoogleLogin(){
 

@@ -35,9 +35,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.WindowCompat;
 
+import com.emon.qwash.Api.ApiClient;
+import com.emon.qwash.Api.ApiService;
+import com.emon.qwash.MainActivity;
+import com.emon.qwash.ModelClass.RegisterResponse;
 import com.emon.qwash.R;
 import com.emon.qwash.util.SetGradientText;
 import com.emon.qwash.util.WhiteStatusBar;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -48,6 +53,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -150,22 +160,22 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 }
 
-                /*registerUser(selectedImageFile, edname.getText().toString(), edemail.getText().toString(),
-                        edpass.getText().toString(), ednumber.getText().toString());*/
+                registerUser(selectedImageFile, edname.getText().toString(), edemail.getText().toString(),
+                        edpass.getText().toString(), ednumber.getText().toString());
             }
         });
 
-       /* profile_container.setOnClickListener(view -> ImagePicker.with(SignUpActivity.this)
+        profile_container.setOnClickListener(view -> ImagePicker.with(SignUpActivity.this)
                 .crop()
                 .compress(1024)
                 .maxResultSize(1080, 1080)
                 .createIntent(intent -> {
                     imagePickerLauncher.launch(intent);
                     return null;
-                }));*/
+                }));
     }
 
-   /* public void registerUser(File imageFile, String names, String emails, String passwords, String numbers) {
+   public void registerUser(File imageFile, String names, String emails, String passwords, String numbers) {
         ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
         progressDialog.setMessage("Loading... Please wait");
         progressDialog.setCancelable(false);
@@ -200,7 +210,7 @@ public class SignUpActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         editor.putString("email", edemail.getText().toString());
                         editor.apply();
-                        startActivity(new Intent(SignUpActivity.this, EducationInfo.class));
+                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     }
                 } else {
                     Log.e("SIGNUP_FAILED", "Response Error: " + response.code());
@@ -213,7 +223,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-    }*/
+    }
 
     ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
